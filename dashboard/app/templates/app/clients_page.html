@@ -1,0 +1,12 @@
+{% extends 'app/base.html' %}
+
+{% block content %}
+    <h1>Employees Page</h1>
+    {% for client in clients %}
+        <div class="block">
+            <p><b>Name</b><br>{{ client.name }}</p><br>
+            <p><b>Address</b><br>{{ client.address }}</p><br>
+            <p><b>Phone number</b><br>{{ client.phone_number }}</p>
+        </div>
+    {% endfor %}
+{% endblock %}

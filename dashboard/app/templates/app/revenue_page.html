@@ -1,0 +1,26 @@
+{% extends 'app/base.html' %}
+
+{% block content %}
+    <h1>Revenue Page</h1>
+    <h3>Daily revenue</h3>
+    {% for daily in daily_revenue %}
+        <div class="block">
+            <p><b>Total revenue</b><br>{{ daily.total_revenue }}</p><br>
+            <p><b>Date</b><br>{{ daily.date }}</p>
+        </div>
+    {% endfor %}
+    <h3>Weekly revenue</h3>
+    {% for weekly in weekly_revenue %}
+        <div class="block">
+            <p><b>Number of liters</b><br>{{ weekly.total_revenue }}</p><br>
+            <p><b>Quantity</b><br>{{ weekly.week }}</p>
+        </div>
+    {% endfor %}
+    <h3>Monthly revenue</h3>
+    {% for monthly in monthly_revenue %}
+        <div class="block">
+            <p><b>Number of liters</b><br>{{ monthly.total_revenue }}</p><br>
+            <p><b>Quantity</b><br>{{ monthly.month }}</p>
+        </div>
+    {% endfor %}
+{% endblock %}

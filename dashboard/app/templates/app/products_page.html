@@ -1,0 +1,11 @@
+{% extends 'app/base.html' %}
+
+{% block content %}
+    <h1>Product List Page</h1>
+    {% for product in products %}
+        <div class="block">
+            <p><b>Number of liters</b><br>{{ product.bottle_type }}</p><br>
+            <p><b>Quantity</b><br>{{ product.quantity }}</p>
+        </div>
+    {% endfor %}
+{% endblock %}

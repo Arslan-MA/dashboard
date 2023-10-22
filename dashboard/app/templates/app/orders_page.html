@@ -1,0 +1,29 @@
+{% extends 'app/base.html' %}
+
+{% block content %}
+    <h1>Order List Page</h1>
+    <h3>Orders in progress</h3>
+    {% for order in orders %}
+        {% if order.status == 'in progress' %}
+            <div class="block">
+                <p><b>Client name</b><br>{{ order.client.name }}</p><br>
+                <p><b>Number of liters</b><br>{{ order.bottle_type }}</p><br>
+                <p><b>Quantity</b><br>{{ order.quantity }}</p><br>
+                <p><b>Employee name</b><br>{{ order.employee.name }}</p><br>
+                <p><b>Status</b><br>{{ order.status }}</p>
+            </div>
+        {% endif %}
+    {% endfor %}
+    <h3>History delivered orders</h3>
+    {% for order in orders %}
+        {% if order.status == 'delivered' %}
+            <div class="block">
+                <p><b>Client name</b><br>{{ order.client.name }}</p><br>
+                <p><b>Number of liters</b><br>{{ order.bottle_type }}</p><br>
+                <p><b>Quantity</b><br>{{ order.quantity }}</p><br>
+                <p><b>Employee name</b><br>{{ order.employee.name }}</p><br>
+                <p><b>Status</b><br>{{ order.status }}</p>
+            </div>
+        {% endif %}
+    {% endfor %}
+{% endblock %}

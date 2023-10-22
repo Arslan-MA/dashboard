@@ -1,0 +1,11 @@
+{% extends 'app/base.html' %}
+
+{% block content %}
+    <h1>Employees Page</h1>
+    {% for employee in employees %}
+        <div class="block">
+            <p><b>Name</b><br>{{ employee.name }}</p><br>
+            <p><b>Status</b><br>{{ employee.status }}</p>
+        </div>
+    {% endfor %}
+{% endblock %}
